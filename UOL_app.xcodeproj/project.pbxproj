@@ -66,6 +66,7 @@
 				A7772A521E08AA6800EB33ED /* Images */,
 				A7772A501E08A8DD00EB33ED /* Model */,
 				A7772A4F1E08A8D800EB33ED /* View */,
+				A7772A4E1E08A8D300EB33ED /* Controller */,
 			);
 			path = UOL_app;
 			sourceTree = "<group>";
@@ -108,7 +109,6 @@
 		A7772A521E08AA6800EB33ED /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				A7772A4E1E08A8D300EB33ED /* Controller */,
 				A7772A431E08A5CE00EB33ED /* Assets.xcassets */,
 			);
 			name = Images;
