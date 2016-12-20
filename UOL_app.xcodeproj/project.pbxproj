@@ -14,6 +14,7 @@
 		A7772A541E08B50700EB33ED /* ListagemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7772A531E08B50700EB33ED /* ListagemViewController.swift */; };
 		A7772A561E08B53D00EB33ED /* DetalhesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7772A551E08B53D00EB33ED /* DetalhesViewController.swift */; };
 		A7772A581E08B71A00EB33ED /* NoticiaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7772A571E08B71A00EB33ED /* NoticiaTableViewCell.swift */; };
+		A7772A5A1E08BEDC00EB33ED /* Noticia.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7772A591E08BEDC00EB33ED /* Noticia.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		A7772A531E08B50700EB33ED /* ListagemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListagemViewController.swift; sourceTree = "<group>"; };
 		A7772A551E08B53D00EB33ED /* DetalhesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetalhesViewController.swift; sourceTree = "<group>"; };
 		A7772A571E08B71A00EB33ED /* NoticiaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NoticiaTableViewCell.swift; path = ../NoticiaTableViewCell.swift; sourceTree = "<group>"; };
+		A7772A591E08BEDC00EB33ED /* Noticia.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Noticia.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +66,6 @@
 				A7772A521E08AA6800EB33ED /* Images */,
 				A7772A501E08A8DD00EB33ED /* Model */,
 				A7772A4F1E08A8D800EB33ED /* View */,
-				A7772A4E1E08A8D300EB33ED /* Controller */,
 			);
 			path = UOL_app;
 			sourceTree = "<group>";
@@ -90,6 +91,7 @@
 		A7772A501E08A8DD00EB33ED /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A7772A591E08BEDC00EB33ED /* Noticia.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -106,6 +108,7 @@
 		A7772A521E08AA6800EB33ED /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				A7772A4E1E08A8D300EB33ED /* Controller */,
 				A7772A431E08A5CE00EB33ED /* Assets.xcassets */,
 			);
 			name = Images;
@@ -187,6 +190,7 @@
 				A7772A3D1E08A5CE00EB33ED /* AppDelegate.swift in Sources */,
 				A7772A541E08B50700EB33ED /* ListagemViewController.swift in Sources */,
 				A7772A581E08B71A00EB33ED /* NoticiaTableViewCell.swift in Sources */,
+				A7772A5A1E08BEDC00EB33ED /* Noticia.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
