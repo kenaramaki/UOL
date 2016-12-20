@@ -39,7 +39,6 @@
 			isa = PBXGroup;
 			children = (
 				A7772A3B1E08A5CE00EB33ED /* UOL_app */,
-				A7772A3A1E08A5CE00EB33ED /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -49,19 +48,61 @@
 				A7772A391E08A5CE00EB33ED /* UOL_app.app */,
 			);
 			name = Products;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		A7772A3B1E08A5CE00EB33ED /* UOL_app */ = {
 			isa = PBXGroup;
 			children = (
+				A7772A521E08AA6800EB33ED /* Images */,
+				A7772A511E08AA3B00EB33ED /* Support */,
 				A7772A3C1E08A5CE00EB33ED /* AppDelegate.swift */,
+				A7772A501E08A8DD00EB33ED /* Model */,
+				A7772A4F1E08A8D800EB33ED /* View */,
+				A7772A4E1E08A8D300EB33ED /* Controller */,
 				A7772A3E1E08A5CE00EB33ED /* ViewController.swift */,
-				A7772A401E08A5CE00EB33ED /* Main.storyboard */,
-				A7772A431E08A5CE00EB33ED /* Assets.xcassets */,
-				A7772A451E08A5CE00EB33ED /* LaunchScreen.storyboard */,
-				A7772A481E08A5CE00EB33ED /* Info.plist */,
 			);
 			path = UOL_app;
+			sourceTree = "<group>";
+		};
+		A7772A4E1E08A8D300EB33ED /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		A7772A4F1E08A8D800EB33ED /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A7772A451E08A5CE00EB33ED /* LaunchScreen.storyboard */,
+				A7772A401E08A5CE00EB33ED /* Main.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		A7772A501E08A8DD00EB33ED /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		A7772A511E08AA3B00EB33ED /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				A7772A3A1E08A5CE00EB33ED /* Products */,
+				A7772A481E08A5CE00EB33ED /* Info.plist */,
+			);
+			name = Support;
+			sourceTree = "<group>";
+		};
+		A7772A521E08AA6800EB33ED /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				A7772A431E08A5CE00EB33ED /* Assets.xcassets */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,6 +300,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = UOL_app/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kenaramaki.UOL-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -271,6 +313,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = UOL_app/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kenaramaki.UOL-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
