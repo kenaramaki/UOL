@@ -88,7 +88,7 @@
         <!--Notícias-->
         <scene sceneID="g9p-oA-eXQ">
             <objects>
-                <viewController id="tUo-r0-2gp" customClass="DetalhesViewController" customModule="UOL_app" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="detalhesViewController" id="tUo-r0-2gp" customClass="DetalhesViewController" customModule="UOL_app" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="BFc-QM-S0Z"/>
                         <viewControllerLayoutGuide type="bottom" id="QfA-g5-tYe"/>

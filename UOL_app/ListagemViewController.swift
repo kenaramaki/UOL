@@ -97,16 +97,8 @@ class ListagemViewController: UIViewController, UITableViewDataSource,UITableVie
                                             
                                         }()
                                         
-                                        /*
-                                        // shareURL
-                                        let shareURLStr:String = {
-                                            if let shareURL = noticiasDict.value(forkey: "share-url"){
-                                                return shareURL as! String
-                                            }
-                                            return "shareURL"
-                                        }()
-                                        */
-                                        
+                                 
+                                        // Adicionando cada noticia no array de noticias
                                         self.noticiasArray.append(Noticia(title: titleStr, thumb: thumbStr, updated: updatedNumber, shareURL: shareURLStr, webViewURL: webViewURLStr))
                                         
                                         OperationQueue.main.addOperation {
@@ -145,6 +137,22 @@ class ListagemViewController: UIViewController, UITableViewDataSource,UITableVie
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! NoticiaTableViewCell
+        
+        let noticia = noticiasArray[indexPath.row]
+        
+        cell.titleLabel.text = noticia.title
+        cell.timeLabel.text = String(describing: noticia.updated)
+        
+        guard let thumbURL = NSURL(string: noticia.thumb) else {
+            return cell
+        }
+        
+        guard let data = NSData(contentsOf: thumbURL as URL) else {
+            return cell
+        }
+        
+        cell.thumbImageView.image = UIImage(data: data as Data)
+        
         return cell
     }
     
