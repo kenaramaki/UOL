@@ -125,14 +125,11 @@ class ListagemViewController: UIViewController, UITableViewDataSource,UITableVie
         
     }
     
-    //
+    //Métodos TableView
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return noticiasArray.count
     }
-    
-    
-  
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -156,5 +153,20 @@ class ListagemViewController: UIViewController, UITableViewDataSource,UITableVie
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let noticia = noticiasArray[indexPath.row]
+        
+        if let transição = storyboard?.instantiateViewController(withIdentifier: "detalhesViewController") as? DetalhesViewController {
+            
+            transição.endereçoWebView = noticia.webViewURL
+            
+            self.navigationController?.pushViewController(transição, animated: true)
+            
+            tableView.deselectRow(at: indexPath, animated: true)
+            
+        }
+        
+    }
     
 }
