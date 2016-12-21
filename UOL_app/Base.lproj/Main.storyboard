@@ -130,7 +130,13 @@
                             <constraint firstItem="Yek-YO-Zlt" firstAttribute="centerX" secondItem="dOF-3l-AZ4" secondAttribute="centerX" id="uQi-8w-hNZ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Notícias" id="zP0-zR-b1z"/>
+                    <navigationItem key="navigationItem" title="Notícias" id="zP0-zR-b1z">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="f91-3R-MCs">
+                            <connections>
+                                <action selector="tapCompartilha:" destination="tUo-r0-2gp" id="eFg-Jm-SaC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="spinner" destination="Yek-YO-Zlt" id="dVs-3c-BAu"/>
                         <outlet property="webView" destination="6oX-5Z-4fS" id="kki-pd-6f3"/>

@@ -14,19 +14,28 @@ class DetalhesViewController: UIViewController, UIWebViewDelegate {
     @IBOutlet weak var spinner: UIActivityIndicatorView!
 
     var endereçoWebView:String?
-    //var endereçoShare:String?
+    var endereçoShare:String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        guard let ewv = endereçoWebView,
-            let url = URL(string: ewv) else {
+        guard let eWebView = endereçoWebView,
+              let urlWebView = URL(string: eWebView) else {
                 fatalError("URL inválida")
         }
         
-        let request = URLRequest(url: url)
+        /*
+        guard let eShare = endereçoShare,
+            let urlShare = URL(string: eShare) else {
+                fatalError("URL inválida")
+        }
+        */
         
-        webView.loadRequest(request)
+        let requestWebView = URLRequest(url: urlWebView)
+        webView.loadRequest(requestWebView)
+        
+        
+       
         
     }
     
@@ -38,6 +47,26 @@ class DetalhesViewController: UIViewController, UIWebViewDelegate {
     func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
         spinner.stopAnimating()
     }
-
-
+    
+    @IBAction func tapCompartilha(_ sender: Any) {
+        
+        let texto = "Veja este artigo"
+        
+        /*
+        guard let eShare = endereçoShare,
+            let urlShare = URL(string: eShare) else {
+                fatalError("URL inválida")
+        }
+        */
+        
+        if let eShare = endereçoShare,
+            let urlShare = URL(string: eShare) {
+        
+            let shareController = UIActivityViewController(activityItems: [texto, urlShare], applicationActivities: nil)
+            self.present(shareController, animated: true, completion: nil)
+        
+        }
+        
+    }
+    
 }

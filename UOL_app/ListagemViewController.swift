@@ -160,6 +160,7 @@ class ListagemViewController: UIViewController, UITableViewDataSource,UITableVie
         if let transição = storyboard?.instantiateViewController(withIdentifier: "detalhesViewController") as? DetalhesViewController {
             
             transição.endereçoWebView = noticia.webViewURL
+            transição.endereçoShare   = noticia.shareURL
             
             self.navigationController?.pushViewController(transição, animated: true)
             
