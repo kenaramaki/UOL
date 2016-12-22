@@ -16,13 +16,22 @@ class ListagemViewController: UIViewController, UITableViewDataSource,UITableVie
     @IBOutlet weak var tableView: UITableView!
 
     var noticiasArray = [Noticia]()
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.downloadJsonWithURL()
-        print("TESTE")
+    
+        
+        self.navigationController?.navigationBar.barTintColor = UIColor.black
+        self.navigationController?.navigationBar.tintColor = UIColor(red: 247/255, green: 178/255, blue: 32/255, alpha: 1)
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+        
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 38, height: 38))
+        imageView.contentMode = .scaleAspectFit
+        let logo = UIImage(named: "uol.png")
+        imageView.image = logo
+        navigationItem.titleView = imageView
         
     }
 

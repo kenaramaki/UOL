@@ -15,6 +15,7 @@
 		A7772A561E08B53D00EB33ED /* DetalhesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7772A551E08B53D00EB33ED /* DetalhesViewController.swift */; };
 		A7772A581E08B71A00EB33ED /* NoticiaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7772A571E08B71A00EB33ED /* NoticiaTableViewCell.swift */; };
 		A7772A5A1E08BEDC00EB33ED /* Noticia.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7772A591E08BEDC00EB33ED /* Noticia.swift */; };
+		A7A674431E0B59AE00DDAF26 /* uol.png in Resources */ = {isa = PBXBuildFile; fileRef = A7A674421E0B59AE00DDAF26 /* uol.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		A7772A551E08B53D00EB33ED /* DetalhesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetalhesViewController.swift; sourceTree = "<group>"; };
 		A7772A571E08B71A00EB33ED /* NoticiaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NoticiaTableViewCell.swift; path = ../NoticiaTableViewCell.swift; sourceTree = "<group>"; };
 		A7772A591E08BEDC00EB33ED /* Noticia.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Noticia.swift; sourceTree = "<group>"; };
+		A7A674421E0B59AE00DDAF26 /* uol.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = uol.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 		A7772A521E08AA6800EB33ED /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				A7A674421E0B59AE00DDAF26 /* uol.png */,
 				A7772A431E08A5CE00EB33ED /* Assets.xcassets */,
 			);
 			name = Images;
@@ -175,6 +178,7 @@
 			files = (
 				A7772A471E08A5CE00EB33ED /* LaunchScreen.storyboard in Resources */,
 				A7772A441E08A5CE00EB33ED /* Assets.xcassets in Resources */,
+				A7A674431E0B59AE00DDAF26 /* uol.png in Resources */,
 				A7772A421E08A5CE00EB33ED /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -352,6 +356,7 @@
 				A7772A4D1E08A5CE00EB33ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
