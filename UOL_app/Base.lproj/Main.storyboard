@@ -95,7 +95,7 @@
             </objects>
             <point key="canvasLocation" x="1031.25" y="32.5"/>
         </scene>
-        <!--Notícias-->
+        <!--Detalhes View Controller-->
         <scene sceneID="g9p-oA-eXQ">
             <objects>
                 <viewController storyboardIdentifier="detalhesViewController" id="tUo-r0-2gp" customClass="DetalhesViewController" customModule="UOL_app" customModuleProvider="target" sceneMemberID="viewController">
@@ -131,7 +131,7 @@
                             <constraint firstItem="Yek-YO-Zlt" firstAttribute="centerX" secondItem="dOF-3l-AZ4" secondAttribute="centerX" id="uQi-8w-hNZ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Notícias" id="zP0-zR-b1z">
+                    <navigationItem key="navigationItem" id="zP0-zR-b1z">
                         <barButtonItem key="backBarButtonItem" title=" " id="Wkx-19-WtO"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="action" id="f91-3R-MCs">
                             <color key="tintColor" red="0.96862745100000003" green="0.69803921570000005" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>

@@ -39,7 +39,7 @@ class ListagemViewController: UIViewController, UITableViewDataSource,UITableVie
             let titleFrame = CGRect(x: navigationBar.frame.width/2, y: 0, width: navigationBar.frame.width/2, height: navigationBar.frame.height)
         
             let titleLabel = UILabel(frame: titleFrame)
-            titleLabel.text = "Notícia"
+            titleLabel.text = "Notícias"
             titleLabel.textColor = UIColor.white
         
         
@@ -177,7 +177,12 @@ class ListagemViewController: UIViewController, UITableViewDataSource,UITableVie
         let minute      = updatedStr.substring(with: minuteStart..<minuteEnd)
         
         cell.titleLabel.text = noticia.title
-        cell.timeLabel.text = ("\(hour)h\(minute)")
+        
+        if minute == "00" {
+            cell.timeLabel.text = ("\(hour)h")
+        } else {
+            cell.timeLabel.text = ("\(hour)h\(minute)")
+        }
         
         guard let thumbURL = NSURL(string: noticia.thumb) else {
             return cell
