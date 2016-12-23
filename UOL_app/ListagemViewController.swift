@@ -162,9 +162,22 @@ class ListagemViewController: UIViewController, UITableViewDataSource,UITableVie
         
         let noticia = noticiasArray[indexPath.row]
         
+        let updatedStr = String(describing: noticia.updated)
+        
+        // Aqui eu pego a string updated e corto ela para que aparecça apenas as horas
+        // Exemplo: 20161222214536 (para melhor visualização 2016_12_22_21_45_36) e pego o 21
+        let hourStart = updatedStr.index(updatedStr.startIndex, offsetBy:8)
+        let hourEnd   = updatedStr.index(updatedStr.endIndex, offsetBy: -4)
+        let hour      = updatedStr.substring(with: hourStart..<hourEnd)
+        
+        // Aqui eu pego a string updated e corto ela para que aparecça apenas os minutos
+        // Exemplo: 20161222214536 (para melhor visualização 2016_12_22_21_45_36) e pego o 45
+        let minuteStart = updatedStr.index(updatedStr.startIndex, offsetBy:10)
+        let minuteEnd   = updatedStr.index(updatedStr.endIndex, offsetBy: -2)
+        let minute      = updatedStr.substring(with: minuteStart..<minuteEnd)
         
         cell.titleLabel.text = noticia.title
-        cell.timeLabel.text = String(describing: noticia.updated)
+        cell.timeLabel.text = ("\(hour)h\(minute)")
         
         guard let thumbURL = NSURL(string: noticia.thumb) else {
             return cell
