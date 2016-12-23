@@ -27,13 +27,29 @@ class ListagemViewController: UIViewController, UITableViewDataSource,UITableVie
         self.navigationController?.navigationBar.tintColor = UIColor(red: 247/255, green: 178/255, blue: 32/255, alpha: 1)
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         
-        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 38, height: 38))
-        imageView.contentMode = .scaleAspectFit
-        let logo = UIImage(named: "uol.png")
-        imageView.image = logo
-        navigationItem.titleView = imageView
         
+        if let navigationBar = self.navigationController?.navigationBar {
+        
+            let imageView = UIImageView(frame: CGRect(x: ((navigationBar.frame.width/2) - 40), y: 0, width: 38, height: 38))
+            imageView.contentMode = .scaleAspectFit
+            let logo = UIImage(named: "uol.png")
+            imageView.image = logo
+            //navigationItem.titleView = imageView
+        
+            let titleFrame = CGRect(x: navigationBar.frame.width/2, y: 0, width: navigationBar.frame.width/2, height: navigationBar.frame.height)
+        
+            let titleLabel = UILabel(frame: titleFrame)
+            titleLabel.text = "Notícia"
+            titleLabel.textColor = UIColor.white
+        
+        
+        
+            navigationBar.addSubview(titleLabel)
+            navigationBar.addSubview(imageView)
+        
+        }
     }
+        
 
     
     // Método downloadJsonWithURL
@@ -145,6 +161,7 @@ class ListagemViewController: UIViewController, UITableViewDataSource,UITableVie
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! NoticiaTableViewCell
         
         let noticia = noticiasArray[indexPath.row]
+        
         
         cell.titleLabel.text = noticia.title
         cell.timeLabel.text = String(describing: noticia.updated)

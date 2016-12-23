@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Notícias-->
+        <!--Listagem View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ListagemViewController" customModule="UOL_app" customModuleProvider="target" sceneMemberID="viewController">
@@ -87,7 +87,7 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="2TP-Yj-Pjk" secondAttribute="bottom" id="y9T-WP-ezv"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Notícias" id="lxq-FI-SQp"/>
+                    <navigationItem key="navigationItem" id="lxq-FI-SQp"/>
                     <connections>
                         <outlet property="tableView" destination="2TP-Yj-Pjk" id="oz5-e0-lMA"/>
                         <segue destination="tUo-r0-2gp" kind="push" id="VhH-EA-0hm"/>
