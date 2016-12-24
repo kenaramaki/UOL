@@ -16,13 +16,14 @@ class ListagemViewController: UIViewController, UITableViewDataSource,UITableVie
     @IBOutlet weak var tableView: UITableView!
 
     var noticiasArray = [Noticia]()
+    //var datasArray  = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.downloadJsonWithURL()
-    
         
+        // Personalização da NavigationBar
         self.navigationController?.navigationBar.barTintColor = UIColor.black
         self.navigationController?.navigationBar.tintColor = UIColor(red: 247/255, green: 178/255, blue: 32/255, alpha: 1)
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
@@ -41,8 +42,6 @@ class ListagemViewController: UIViewController, UITableViewDataSource,UITableVie
             let titleLabel = UILabel(frame: titleFrame)
             titleLabel.text = "Notícias"
             titleLabel.textColor = UIColor.white
-        
-        
         
             navigationBar.addSubview(titleLabel)
             navigationBar.addSubview(imageView)
@@ -156,6 +155,7 @@ class ListagemViewController: UIViewController, UITableViewDataSource,UITableVie
         return noticiasArray.count
     }
     
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! NoticiaTableViewCell
@@ -164,24 +164,45 @@ class ListagemViewController: UIViewController, UITableViewDataSource,UITableVie
         
         let updatedStr = String(describing: noticia.updated)
         
-        // Aqui eu pego a string updated e corto ela para que aparecça apenas as horas
+        // Aqui eu pego a string updatedStr e corto ela para que aparecça apenas as horas
         // Exemplo: 20161222214536 (para melhor visualização 2016_12_22_21_45_36) e pego o 21
         let hourStart = updatedStr.index(updatedStr.startIndex, offsetBy:8)
         let hourEnd   = updatedStr.index(updatedStr.endIndex, offsetBy: -4)
         let hour      = updatedStr.substring(with: hourStart..<hourEnd)
         
-        // Aqui eu pego a string updated e corto ela para que aparecça apenas os minutos
+        // Aqui eu pego a string updatedStr e corto ela para que aparecça apenas os minutos
         // Exemplo: 20161222214536 (para melhor visualização 2016_12_22_21_45_36) e pego o 45
         let minuteStart = updatedStr.index(updatedStr.startIndex, offsetBy:10)
         let minuteEnd   = updatedStr.index(updatedStr.endIndex, offsetBy: -2)
         let minute      = updatedStr.substring(with: minuteStart..<minuteEnd)
         
-        cell.titleLabel.text = noticia.title
+        // Pegando o dia da string updatedStr
+        let dayStart = updatedStr.index(updatedStr.startIndex, offsetBy: 6)
+        let dayEnd   = updatedStr.index(updatedStr.endIndex, offsetBy: -6)
+        let day      = updatedStr.substring(with: dayStart..<dayEnd)
+        
+        // Pegando o mês da string updatedStr
+        let monthStart = updatedStr.index(updatedStr.startIndex, offsetBy: 4)
+        let monthEnd   = updatedStr.index(updatedStr.endIndex, offsetBy: -8)
+        let month      = updatedStr.substring(with: monthStart..<monthEnd)
+        
+        /*
+        let dia = ("\(day)/\(month)")
+        
+        if datasArray.contains(dia) {
+            
+        } else {
+            datasArray.append(dia)
+        }
+        
+        print(datasArray)
+        */
+        
         
         if minute == "00" {
-            cell.timeLabel.text = ("\(hour)h")
+            cell.timeLabel.text = ("\(day)/\(month) - \(hour)h")
         } else {
-            cell.timeLabel.text = ("\(hour)h\(minute)")
+            cell.timeLabel.text = ("\(day)/\(month) - \(hour)h\(minute)")
         }
         
         guard let thumbURL = NSURL(string: noticia.thumb) else {
@@ -192,10 +213,36 @@ class ListagemViewController: UIViewController, UITableViewDataSource,UITableVie
             return cell
         }
         
+        cell.titleLabel.text = noticia.title
         cell.thumbImageView.image = UIImage(data: data as Data)
         
         return cell
     }
+    
+    /*
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        let meuHeader = UILabel()
+        meuHeader.backgroundColor   = UIColor.white.withAlphaComponent(0.7)
+        meuHeader.textAlignment     = .center
+        meuHeader.textColor         = .black
+        meuHeader.font              = UIFont.boldSystemFont(ofSize: 14)
+        
+        meuHeader.text = "Teste"//datasArray[section]
+        
+        return meuHeader
+        
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 25
+    }
+    
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1 //datasArray.count
+    }
+    */
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
@@ -208,6 +255,7 @@ class ListagemViewController: UIViewController, UITableViewDataSource,UITableVie
             
             self.navigationController?.pushViewController(transição, animated: true)
             
+            // Deselecionar a linha
             tableView.deselectRow(at: indexPath, animated: true)
             
         }

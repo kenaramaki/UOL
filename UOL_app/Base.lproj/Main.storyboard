@@ -86,6 +86,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="lxq-FI-SQp"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="tableView" destination="2TP-Yj-Pjk" id="oz5-e0-lMA"/>
                         <segue destination="tUo-r0-2gp" kind="push" id="VhH-EA-0hm"/>
