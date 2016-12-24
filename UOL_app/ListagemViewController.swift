@@ -14,14 +14,21 @@ class ListagemViewController: UIViewController, UITableViewDataSource,UITableVie
     final let urlString = "http://app.servicos.uol.com.br/c/api/v1/list/news/?app=uol-placar-futebol&version=2"
     
     @IBOutlet weak var tableView: UITableView!
-
+    
     var noticiasArray = [Noticia]()
     //var datasArray  = [String]()
-
+    
+    var refreshControl = UIRefreshControl()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.downloadJsonWithURL()
+        
+        // Atualizando tableView
+        tableView.addSubview(refreshControl)
+        self.refreshControl.addTarget(self, action: #selector(ListagemViewController.atualizaListagem), for: .valueChanged)
+        
         
         // Personalização da NavigationBar
         self.navigationController?.navigationBar.barTintColor = UIColor.black
@@ -49,7 +56,14 @@ class ListagemViewController: UIViewController, UITableViewDataSource,UITableVie
         }
     }
         
-
+    // Método atualizaListagem
+    
+    func atualizaListagem() {
+        downloadJsonWithURL()
+        self.tableView.reloadData()
+        self.refreshControl.endRefreshing()
+    }
+    
     
     // Método downloadJsonWithURL
     func downloadJsonWithURL() {
