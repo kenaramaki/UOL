@@ -29,12 +29,10 @@ class ListagemViewController: UIViewController, UITableViewDataSource,UITableVie
         tableView.addSubview(refreshControl)
         self.refreshControl.addTarget(self, action: #selector(ListagemViewController.atualizaListagem), for: .valueChanged)
         
-        
         // Personalização da NavigationBar
         self.navigationController?.navigationBar.barTintColor = UIColor.black
         self.navigationController?.navigationBar.tintColor = UIColor(red: 247/255, green: 178/255, blue: 32/255, alpha: 1)
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
-        
         
         if let navigationBar = self.navigationController?.navigationBar {
         
@@ -54,14 +52,6 @@ class ListagemViewController: UIViewController, UITableViewDataSource,UITableVie
             navigationBar.addSubview(imageView)
         
         }
-    }
-        
-    // Método atualizaListagem
-    
-    func atualizaListagem() {
-        downloadJsonWithURL()
-        self.tableView.reloadData()
-        self.refreshControl.endRefreshing()
     }
     
     
@@ -162,6 +152,15 @@ class ListagemViewController: UIViewController, UITableViewDataSource,UITableVie
         }).resume()
         
     }
+    
+    // Método atualizaListagem
+    
+    func atualizaListagem() {
+        downloadJsonWithURL()
+        self.tableView.reloadData()
+        self.refreshControl.endRefreshing()
+    }
+    
     
     //Métodos TableView
     
