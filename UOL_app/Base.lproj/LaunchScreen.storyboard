@@ -38,13 +38,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="o55-6t-p9O">
+                                <rect key="frame" x="150" y="265" width="20" height="20"/>
+                                <color key="tintColor" red="0.99171406030654907" green="0.38773965835571289" blue="0.045419484376907349" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="color" red="0.96862745100000003" green="0.69803921570000005" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="o55-6t-p9O" firstAttribute="centerX" secondItem="qer-l1-yfo" secondAttribute="centerX" id="5q0-tu-wVL"/>
                             <constraint firstItem="qer-l1-yfo" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="LpH-A5-QIH"/>
                             <constraint firstItem="qer-l1-yfo" firstAttribute="top" secondItem="xbz-qx-8hd" secondAttribute="bottom" constant="10" id="Roo-WX-ydP"/>
                             <constraint firstItem="xbz-qx-8hd" firstAttribute="centerX" secondItem="qer-l1-yfo" secondAttribute="centerX" id="iPn-LV-wu9"/>
                             <constraint firstItem="qer-l1-yfo" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="z1H-Vv-Zsn"/>
+                            <constraint firstItem="o55-6t-p9O" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="35" id="z3e-LE-C4t"/>
                         </constraints>
                     </view>
                 </viewController>

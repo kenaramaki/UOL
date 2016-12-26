@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="122" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2TP-Yj-Pjk">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="430"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="121" id="as0-5P-XEb" customClass="NoticiaTableViewCell" customModule="UOL_app" customModuleProvider="target">
@@ -40,7 +40,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YuX-aL-mZS">
-                                                    <rect key="frame" x="162" y="10" width="148" height="76.5"/>
+                                                    <rect key="frame" x="162" y="10" width="148" height="77"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -76,18 +76,29 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="snT-xU-MYZ"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="din-6J-2qA" customClass="GADBannerView">
+                                <rect key="frame" x="0.0" y="430" width="320" height="50"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="Awy-Vt-024"/>
+                                    <constraint firstAttribute="height" constant="50" id="CRC-oO-fAK"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="2TP-Yj-Pjk" secondAttribute="trailing" id="9Ll-HE-xFv"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="din-6J-2qA" secondAttribute="bottom" id="EeC-aq-Zy8"/>
                             <constraint firstItem="2TP-Yj-Pjk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="IFq-Hc-SmC"/>
                             <constraint firstItem="2TP-Yj-Pjk" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="USu-cK-hiF"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="2TP-Yj-Pjk" secondAttribute="bottom" id="y9T-WP-ezv"/>
+                            <constraint firstItem="din-6J-2qA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aeJ-1h-gtJ"/>
+                            <constraint firstItem="din-6J-2qA" firstAttribute="top" secondItem="2TP-Yj-Pjk" secondAttribute="bottom" id="pfY-HS-YBu"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="lxq-FI-SQp"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
+                        <outlet property="banner" destination="din-6J-2qA" id="a59-m1-n66"/>
                         <outlet property="tableView" destination="2TP-Yj-Pjk" id="oz5-e0-lMA"/>
                         <segue destination="tUo-r0-2gp" kind="push" id="VhH-EA-0hm"/>
                     </connections>

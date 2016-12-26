@@ -7,13 +7,16 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
-class ListagemViewController: UIViewController, UITableViewDataSource,UITableViewDelegate {
+class ListagemViewController: UIViewController, UITableViewDataSource,UITableViewDelegate, GADBannerViewDelegate {
 
     // API UOL
     final let urlString = "http://app.servicos.uol.com.br/c/api/v1/list/news/?app=uol-placar-futebol&version=2"
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var banner: GADBannerView!
+    
     
     var noticiasArray = [Noticia]()
     //var datasArray  = [String]()
@@ -52,6 +55,25 @@ class ListagemViewController: UIViewController, UITableViewDataSource,UITableVie
             navigationBar.addSubview(imageView)
         
         }
+        
+        // Ads
+        banner.isHidden = true
+        
+        banner.delegate = self
+        banner.adUnitID = "ca-app-pub-7912055668134284/7780771650"
+        banner.rootViewController = self
+        banner.load(GADRequest())
+        
+    }
+    
+    // Exibe o banner assim que a view tiver recebido um ad
+    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
+        banner.isHidden = false
+    }
+    
+    // Esconde o banner se falhar em receber um ad
+    func adView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: GADRequestError) {
+        banner.isHidden = true
     }
     
     
